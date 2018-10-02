@@ -21,7 +21,7 @@
 		
 	endif;
 
-	echo '<div class="main ';
+	echo '<div id="main" class="';
 	
 	echo basename(get_permalink());
 	

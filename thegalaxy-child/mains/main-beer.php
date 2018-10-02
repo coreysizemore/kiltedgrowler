@@ -21,7 +21,7 @@
 		
 	endif;
 
-	echo '<div class="main ';
+	echo '<div id="main" class="';
 	
 	echo basename(get_permalink());
 	
@@ -226,13 +226,13 @@
 				
 				echo '</div>';
 				
-				echo '<div class="percent_remaining">';
+				//echo '<div class="percent_remaining">';
 				
-				echo '<span class="' . $percent_left_color . '" style="width:' . $percent_remaining . '%;"></span>';
+				//echo '<span class="' . $percent_left_color . '" style="width:' . $percent_remaining . '%;"></span>';
 				
-				echo '<span class="percent_desc">' . $percent_remaining . '% remaining</span>';
+				//echo '<span class="percent_desc">' . $percent_remaining . '% remaining</span>';
 				
-				echo '</div>';
+				//echo '</div>';
 				
 				echo '</div>';
 			

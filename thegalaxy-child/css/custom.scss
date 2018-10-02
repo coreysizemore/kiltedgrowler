@@ -23,65 +23,55 @@ a#mobileopen:visited {
 	background: rgba($colorone, .9);
 }
 
-#nav_bar.bottom_navigation+#home_logo {
-	margin-top: -300px;
-}
-
-header.home_default_image {
+header {
 	background: url('../img/home.jpg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
-header.page_default_image {
+header#header_page {
 	background: url('../img/page.jpg') no-repeat;
     background-size: 100%;
     background-attachment: fixed;
 }
 
-.parallax.parallax_default_image {
+#parallax {
 	background: url('../img/parallax.jpg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    
+    .filter {
+		background: rgba($colorone, .7);
+	}
 }
 
 header {
+	
+	#home_logo {
+		margin-top: -200px;
+		
+		img {
+			height: 250px;
+		}
+	}
+	
 	.image_overlay {
 		background: rgba($colorone, .7);
 	}
-	
-	#nav_bar.bottom_navigation {
-		background-image: linear-gradient(transparent, rgba(0,0,0,0.7));
-		border-top: 1px solid;
-		border-color: rgba(255,255,255,0.25);
-	}
-	
-	#nav_bar.bottom_navigation.scroll-fix {
-		background: #ffffff;
-		border-top: none;
-	}
 }
 
-#home_logo {
-	#logo_home {
-		img {
-			width: 450px;
-		}
-	}
-}
-
-.call_out_boxes {
+#call_out_boxes {
 	background: $colorthree;
 	
 	.cob_3 {
 		.call_out_boxes_item {
-			.square.icon,
+			.square.fas,
 			.square.image-icon {
 				background: $colorfive;
 			}
 			
 			h3 {
-				color: $colorfour;
+				color: $colorfive;
 			}
 			
 			p {
@@ -90,14 +80,14 @@ header {
 			
 			a:link,
 			a:visited {
-				border: 2px solid $colorfour;
-				color: $colorfour;
+				background: $colorfive;
+				color: #ffffff;
 			}
 		}
 	}
 }
 
-.main {
+#main {
 	background: $colorone;
 	
 	.content {
@@ -132,28 +122,8 @@ header {
 	
 	.sidebar {
 		
-		h3 {
-			color: #ffffff;
-		}
-		
-		ul.office_hours,
-		ul.contact_info {
-			li {
-				color: #ffffff;
-				
-				span {
-					color: #ffffff;	
-				}
-			}
-		}
-		
-		p {
-			color: #ffffff;
-		}
-		
-		a:link,
-		a:visited {
-			color: $colorfour;
+		.business_information_wrapper {
+			background: $colorfive;
 		}
 	}
 }
@@ -283,13 +253,19 @@ header {
 	}
 }
 
-.appointment {
+#attention_bar {
 	background: $colorfive;
-}
-
-.parallax {
-	.filter {
-		background: rgba($colorone, .7);
+	
+	.attention_bar_top,
+	.attention_bar_bottom {
+		ul {
+			li {
+				a:link,
+				a:visited {
+					color: $colorfive;
+				}
+			}
+		}
 	}
 }
 
@@ -311,47 +287,49 @@ footer {
 
 /* blog page */
 
-.blog_home {
-	article.blog_preview {
-		
-		span.author {
-			a:link,a:visited {
-				color: $colorfour;	
+#main {
+	&.blog_home {
+		article.blog_preview {
+			
+			span.author {
+				a:link,a:visited {
+					color: $colorfour;	
+				}
+			}
+			
+			p {
+				color: #777777;
 			}
 		}
-		
-		p {
-			color: #777777;
-		}
 	}
-}
-
-.blog_single {
-	article.blog_entry {
-		.meta {
-			span.date,
-			span.author,
-			span.category {
-				color: #ffffff;
-				
+	
+	&.blog_single {
+		article.blog_entry {
+			.meta {
+				span.date,
+				span.author,
+				span.category {
+					color: #ffffff;
+					
+					a:link,
+					a:visited {
+						color: $colorfour;
+					}
+				}
+			}
+			
+			.tagcloud {
 				a:link,
 				a:visited {
+					border: .5px solid $colorfour;
 					color: $colorfour;
 				}
 			}
 		}
-		
-		.tagcloud {
-			a:link,
-			a:visited {
-				border: .5px solid $colorfour;
-				color: $colorfour;
-			}
-		}
-	}
+	}	
 }
 
-.blog_sidebar {
+#blog_sidebar {
 	background: $colorone;
 	
 	.blog_sidebars {
@@ -375,7 +353,7 @@ footer {
 
 @media (min-width: 980px) and (max-width: 1220px) {
 	
-	header.page_default_image {
+	header#header_page {
 		background: url('../img/page.jpg') no-repeat;
 	    background-size: 130%;
 	    background-attachment: fixed;
@@ -385,7 +363,7 @@ footer {
 	
 @media (min-width: 768px) and (max-width: 979px) {
 	
-	header.header_page.page_default_image {
+	header#header_page {
 		background: url('../img/page.jpg') no-repeat;
 	    background-size: 180%;
 	    background-attachment: fixed;
@@ -395,24 +373,24 @@ footer {
 	
 @media (min-width: 480px) and (max-width: 767px) {
 	
-	header.home_default_image {
+	header {
 		background: url('../img/home_mobile.jpg') no-repeat;
 	    background-size: cover;
 	    background-attachment: fixed;
+	    
+	    &#header_home_mobile {
+		    #home_logo {
+			    img {
+				    height: 200px;
+			    }
+		    }
+	    }
 	}
 	
-	header.header_page.page_default_image {
+	header#header_page {
 		background: url('../img/page_mobile.jpg') no-repeat;
 	    background-size: 100%;
 	    background-attachment: fixed;
-	}
-	
-	#home_logo {
-		#logo_home {
-			img {
-				width: 350px;
-			}
-		}
 	}
 	
 	.beer_item_wrapper {
@@ -430,24 +408,24 @@ footer {
 	
 @media (min-width: 0px) and (max-width: 479px) {
 	
-	header.home_default_image {
+	header {
 		background: url('../img/home_mobile.jpg') no-repeat;
 	    background-size: cover;
 	    background-attachment: fixed;
+	    
+	    &#header_home_mobile {
+		    #home_logo {
+			    img {
+				    height: 150px;
+			    }
+		    }
+	    }
 	}
 	
-	header.header_page.page_default_image {
+	header#header_page  {
 		background: url('../img/page_mobile.jpg') no-repeat;
 	    background-size: 100%;
 	    background-attachment: fixed;
-	}
-	
-	#home_logo {
-		#logo_home {
-			img {
-				width: 250px;
-			}
-		}
 	}
 	
 	.beer_item_wrapper {
@@ -458,6 +436,17 @@ footer {
 			margin-right: 0px;
 			vertical-align: top;
 			width: 100%;
+		}
+	}
+	
+	footer {
+		#logo_footer {
+			a:link,
+			a:visited {
+				img {
+					height: 100px;
+				}
+			}
 		}
 	}
 	
