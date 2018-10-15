@@ -23,6 +23,23 @@ a#mobileopen:visited {
 	background: rgba($colorone, .9);
 }
 
+#attention_bar_header {
+	background: $colorone;
+	
+	.attention_bar_header_content {
+		div {
+			ul {
+				li {
+					a:link,
+					a:visited {
+						color: $colorfive;
+					}
+				}
+			}
+		}
+	}
+}
+
 header {
 	background: url('../img/home.jpg') no-repeat;
     background-size: cover;
