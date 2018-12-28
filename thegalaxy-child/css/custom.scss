@@ -18,9 +18,22 @@ a#mobileopen:visited {
 	color: $colorfive;
 }
 
+a#mobileopen:link, 
+a#mobileopen:visited {
+	background: #ffffff;
+}
+
 #mobile_nav,
 #search {
 	background: rgba($colorone, .9);
+	
+	.mobile_nav_wrapper {
+		#mobile_search {
+			input[type="submit"] {
+				color: $colorone;
+			}
+		}
+	}
 }
 
 #attention_bar_header {
@@ -88,7 +101,8 @@ header {
 			}
 			
 			h3 {
-				color: $colorfive;
+				color: #ffffff;
+				text-transform: uppercase;
 			}
 			
 			p {
